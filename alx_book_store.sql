@@ -30,18 +30,18 @@ CREATE TABLE Customers(
 
 -- CREATE ORDERS TABLE
 CREATE TABLE Orders(
-    Order_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id INT NOT NULL,
-    Order_date DATE NOT NULL,
+    order_date DATE NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 -- CREATE ORDER_DETAILS TABLE
 CREATE TABLE Order_Details(
-    Order_detailid INT AUTO_INCREMENT PRIMARY KEY,
-    Order_id INT NOT NULL,
+    order_detailid INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
     book_id INT NOT NULL,
     quantity DOUBLE NOT NULL,
-    FOREIGN KEY (Order_id) REFERENCES Orders(Order_id),
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
     FOREIGN KEY (book_id) REFERENCES Books(book_id)    
 );
